@@ -1,6 +1,6 @@
 # table booking
 
-# Многомодульное web приложение Spring Boot + Spring Data
+Многомодульное web приложение Spring Boot + Spring Data
 
 ## Модули:
 
@@ -29,12 +29,13 @@
 
 ## Литература:
 
-https://temofeev.ru/info/articles/sozdanie-mnogomodulnogo-gradle-proekta-springboot-angular-v-idea/
-https://github.com/kpratikin/Hotel-Reservation-System-Database-/tree/master
-https://www.planyo.com/learn-more.php
-https://oleg0potapov.medium.com/how-to-design-a-booking-system-to-avoid-overlapping-reservation-fe17194c1337
-https://habr.com/ru/articles/265061/
-https://www.baeldung.com/jpa-default-column-values
-
-https://dev.to/francescoxx/java-crud-rest-api-using-spring-boot-hibernate-postgres-docker-and-docker-compose-5cln
+* 
+  + https://temofeev.ru/info/articles/sozdanie-mnogomodulnogo-gradle-proekta-springboot-angular-v-idea/
+  + https://github.com/kpratikin/Hotel-Reservation-System-Database-/tree/master
+  + https://www.planyo.com/learn-more.php
+  + https://oleg0potapov.medium.com/how-to-design-a-booking-system-to-avoid-overlapping-reservation-fe17194c1337
+  + https://habr.com/ru/articles/265061/
+  + https://www.baeldung.com/jpa-default-column-values
+*
+  + https://dev.to/francescoxx/java-crud-rest-api-using-spring-boot-hibernate-postgres-docker-and-docker-compose-5cln
 
