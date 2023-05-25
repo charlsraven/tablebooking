@@ -1,4 +1,4 @@
-package com.voronina;
+package com.voronina.api;
 
 import com.voronina.api.domain.Status;
 

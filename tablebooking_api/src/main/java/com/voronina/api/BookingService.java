@@ -1,4 +1,4 @@
-package com.voronina;
+package com.voronina.api;
 
 import com.voronina.api.domain.Booking;
 
@@ -12,4 +12,7 @@ public interface BookingService {
     Booking update(Booking booking);
 
     void delete(String id);
+
+    //why
+    Booking readOneByName(String name);
 }

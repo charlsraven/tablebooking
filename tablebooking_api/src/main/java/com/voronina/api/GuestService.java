@@ -1,4 +1,4 @@
-package com.voronina;
+package com.voronina.api;
 
 import com.voronina.api.domain.Guest;
 
@@ -13,4 +13,7 @@ public interface GuestService {
     Guest update(Guest guest);
 
     void delete(String id);
+
+    //why
+    Guest readOneByName(String name);
 }
