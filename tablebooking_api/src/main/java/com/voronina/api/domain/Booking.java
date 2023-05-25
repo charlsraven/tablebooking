@@ -42,9 +42,6 @@ public class Booking {
     @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
     private LocalDateTime timeStart;
 
-    @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
-    private LocalDateTime timeEnd;
-
     @Column(columnDefinition = "integer default 1")
     private Integer guest_count;
 }

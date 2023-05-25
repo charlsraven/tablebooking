@@ -13,6 +13,5 @@ public interface BookingService {
 
     void delete(String id);
 
-    //why
     Booking readOneByName(String name);
 }

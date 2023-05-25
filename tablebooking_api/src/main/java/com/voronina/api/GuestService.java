@@ -14,6 +14,5 @@ public interface GuestService {
 
     void delete(String id);
 
-    //why
     Guest readOneByName(String name);
 }

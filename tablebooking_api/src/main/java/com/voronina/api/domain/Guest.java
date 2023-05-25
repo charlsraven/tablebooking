@@ -43,5 +43,5 @@ public class Guest {
     private LocalDate birthday;
 
     @OneToMany(cascade = REMOVE, mappedBy = "guest", fetch = FetchType.EAGER)
-    private Set<Booking> attendance;
+    private Set<Booking> booking;
 }
