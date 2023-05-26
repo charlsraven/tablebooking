@@ -40,7 +40,7 @@ public class Booking {
     private Status status;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
-    private LocalDateTime timeStart;
+    private LocalDateTime time;
 
     @Column(columnDefinition = "integer default 1")
     private Integer guest_count;

@@ -6,7 +6,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
-import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
 
@@ -28,5 +27,5 @@ public class Status {
     private Booking booking;
 
     @Column(columnDefinition = "boolean default false")
-    private boolean attendance;
+    private boolean visited;
 }

@@ -27,6 +27,8 @@
 данных и взаимодействия с браузером. Этот модуль может содержать логику перенаправления запросов, фильтрации, обработки
 ошибок и т.д.
 
+docker run --name postgresql -d -p 5432:5432 -e POSTGRES_USER=tablebooking_user -e POSTGRES_PASSWORD=tablebooking_pass -e POSTGRES_DB=tablebooking postgres:14.2
+
 ## Литература:
 
 * 
@@ -38,4 +40,7 @@
   + https://www.baeldung.com/jpa-default-column-values
 *
   + https://dev.to/francescoxx/java-crud-rest-api-using-spring-boot-hibernate-postgres-docker-and-docker-compose-5cln
-
+*
+  + https://www.javaguides.net/2020/06/add-bootstrap-css-to-thymeleaf.html
+  + https://frontbackend.com/thymeleaf/how-to-add-bootstrap-css-and-js-to-thymeleaf
+  + https://studygyaan.com/spring-boot/thymeleaf-and-bootstrap-5-template-engine-in-spring-boot

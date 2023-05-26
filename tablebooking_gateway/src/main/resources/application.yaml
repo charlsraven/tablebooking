@@ -1,0 +1,10 @@
+tablebooking:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    username: tablebooking_user
+    password: tablebooking_pass
+    url: jdbc:postgresql://localhost:5432/tablebooking
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update

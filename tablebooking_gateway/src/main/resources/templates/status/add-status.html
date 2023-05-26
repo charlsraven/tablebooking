@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Add status</title>
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet">
+    <script crossorigin="anonymous"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script crossorigin="anonymous"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+</head>
+<body>
+<div th:insert="~{header}"></div>
+<div class="row">
+    <div class="col-3"></div>
+    <div class="col-6">
+        <div class="container">
+            <div class="card">
+                <div class="card-header text-center">
+                    <h4>Add status</h4>
+                </div>
+                <div class="card-body text-left">
+                    <form action="/status" class="form__data" id="create" th:method="POST">
+                    </form>
+                    <div class="row">
+                        <div class="col">
+                            <label>Guest</label>
+                            <select class="form-control" form="create" name="guest" required>
+                                <option th:each="guest :${guests}" th:text="${guest.getName()}"
+                                        th:value="${guest.getId()}"></option>
+                            </select>
+                        </div>
+                        <div class="col mt-4">
+                            <input class="btn-check" form="create" id="status" th:name="status"
+                                   type="checkbox">
+                            <label class="btn btn-outline-warning text-dark" for="status">Status</label>
+                        </div>
+                    </div>
+                    <div class="row mt-1">
+                        <div class="col">
+                            <label>Booking</label>
+                            <select class="form-control" form="create" name="booking" required>
+                                <option th:each="booking :${bookings}" th:text="${booking.getTime().toString()}+' '+${booking.getIdTable()+' '+${booking.getGuestCount()}"
+                                        th:value="${booking.getId()}"></option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col d-grid gap-2 ">
+                            <button class="btn btn-primary" form="create" type="submit">Submit</button>
+                        </div>
+                        <div class="col d-grid gap-2">
+                            <a class="btn btn-danger" href="..">Cancel</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-3"></div>
+</div>
+</body>
+</html>

@@ -45,7 +45,7 @@ public class BookingController {
         var places = placeService.readAll();
         model.addAttribute("guests", guests);
         model.addAttribute("places", places);
-        return "bookings/add-booking";
+        return "bookings/add-booking.html";
     }
 
     @GetMapping(path = "/{id}")
@@ -56,7 +56,7 @@ public class BookingController {
         model.addAttribute("booking", booking);
         model.addAttribute("guests", guests);
         model.addAttribute("places", places);
-        return "bookings/update-booking";
+        return "bookings/update-booking.html";
     }
 
     @PostMapping
@@ -69,7 +69,7 @@ public class BookingController {
     public String update(@Valid Booking booking, @PathVariable String id, BindingResult result) {
         if (result.hasErrors()) {
             booking.setId(id);
-            return "bookings/update-booking";
+            return "bookings/update-booking.html";
         }
         bookingService.update(booking);
         return "redirect:/bookings";

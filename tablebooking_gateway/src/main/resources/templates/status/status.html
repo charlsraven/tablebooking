@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Statuses</title>
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" rel="stylesheet">
+    <script crossorigin="anonymous"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script crossorigin="anonymous"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div th:insert="~{header}"></div>
+<div class="container-fluid mt-3">
+    <div class="row">
+        <div class="col-9">
+            <div class="card">
+                <div class="card-body">
+                    <div class="table">
+                        <table class="data__table table table-bordered">
+                            <thead class="thead-light">
+                            <tr class="data__row">
+                                <th class="column__name">Guest</th>
+                                <th class="column__name">Booking</th>
+                                <th class="column__name">Status</th>
+                                <th class="column__name"></th>
+                                <th class="column__name"></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr class="data__row" th:each="status : ${statusList}">
+                                <td class="data__item" th:text="${status.getGuest().getName()}"></td>
+                                <td class="data__item"
+                                    th:text="${status.getBooking().getTime().toString()}+' '+${status.getBooking().getIdTable()+' '+${status.getBooking().getGuestCount()}"></td>
+                                <td class="data__item" th:if="${status.isVisited()}">Yes</td>
+                                <td class="data__item" th:unless="${status.isVisited()}">No</td>
+                                <td class="data__item">
+                                    <a class="btn btn-primary btn-block"
+                                       th:href="@{'/status/' + ${status.getId()}}">Edit
+                                    </a></td>
+                                <td class="data__item">
+                                    <form th:action="@{'/status/' + ${status.getId()}}" th:method="DELETE">
+                                        <button class="btn btn-danger btn-block" th:type="submit">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col">
+                            <a class="btn btn-warning btn-block" href="/status/add/">
+                                Add status
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
